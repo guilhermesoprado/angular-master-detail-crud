@@ -22,14 +22,14 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
+        <tr *ngFor="let category of categories">
             <td>
-                <div><strong>Lazer</strong></div>
-                <div><small>cinema, parque, praia, etc</small></div>                
+                <div><strong>{{ category.name }}</strong></div>
+                <div><small>{{ category.description }}</small></div>                
             </td>
             <td>
-                <a [routerLink]="[12,'edit']" class="btn btn-outline-info btb-xs mr-2">Edit</a>
-                <a  class="btn btn-outline-danger btb-xs">Delete</a>
+                <a [routerLink]="[category.id,'edit']" class="btn btn-outline-info btb-xs mr-2">Edit</a>
+                <a (click) ="delete(category)" class="btn btn-outline-danger btb-xs">Delete</a>
             </td>
         </tr>
     </tbody>
