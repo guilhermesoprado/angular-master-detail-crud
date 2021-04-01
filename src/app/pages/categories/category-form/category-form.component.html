@@ -38,6 +38,14 @@
             </div>
         </div>
     </div>
+
+    <div class="alert alert-danger mt-4" *ngIf="serverErrorMessage">
+        <strong>Error in the server</strong>
+        <ul>
+            <li *ngFor="let error of serverErrorMessage">Email already used.</li>
+        </ul>
+    </div>
+
     <button [disabled]="submittingForm || categoryForm.invalid" type="submit" class="btn btn-primary btn-lg float-right mt-3">Save</button>
 </form>
 
