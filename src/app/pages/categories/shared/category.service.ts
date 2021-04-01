@@ -28,7 +28,7 @@ export class CategoryService {
   }
 
   create(category: Category): Observable<Category>{
-    return this.http.post<Category>("api/category",category).pipe(
+    return this.http.post<Category>(this.apiPath, category).pipe(
       catchError(this.handleError),
       map(this.jsonDataToCategory)
     );
